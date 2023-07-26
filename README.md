@@ -14,6 +14,20 @@ template
 <button :disabled="isButtonDisabled">Button</button>
 この disabled という属性は、isButtonDisabled が 真値 (truthy value) である場合に要素に含まれます。また、<button disabled=""> との一貫性を保つため、値が空の文字列である場合にも含まれます。それ以外の偽値 (falsy values) の場合には、属性が要素から取り除かれます。
 
+## 複数の属性を動的にバインドさせる
+
+次のような複数の属性を持つ JavaScript オブジェクトがあるとします:
+
+
+const objectOfAttrs = {
+  id: 'container',
+  class: 'wrapper'
+}
+以下のように v-bind を引数なしで用いると、これらの複数の属性を 1 つの要素にバインドすることができます:
+
+template
+<div v-bind="objectOfAttrs"></div>
+
 
 
 # わからない箇所
