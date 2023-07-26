@@ -28,7 +28,17 @@ const objectOfAttrs = {
 template
 <div v-bind="objectOfAttrs"></div>
 
+## 関数の呼び出し ​
 
+コンポーネントから公開されているメソッドであれば、以下のようにバインディングの式の内部で呼び出すことができます:
+
+template
+<time :title="toTitleDate(date)" :datetime="date">
+  {{ formatDate(date) }}
+</time>
+
+TIP
+バインディングの式の内部で呼び出される関数は、コンポーネントが更新されるたびに呼び出されます。そのため、データの変更や非同期処理をトリガーするような副作用を持たせてはいけません。
 
 # わからない箇所
 
