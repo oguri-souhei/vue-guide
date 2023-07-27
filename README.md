@@ -70,6 +70,19 @@ template
 <a @[eventName]="doSomething">
 この例では、eventName の値が "focus" のとき、v-on:[eventName] が v-on:focus と同等になります。
 
+
+## 動的引数の制約
+
+HTML ファイルに直接記述する DOM 内テンプレートを使用する場合、ブラウザーでは属性名が小文字であることが求められるため、以下のように大文字のキー名を使用することは避ける必要があります:
+
+template
+<a :[someAttr]="value"> ... </a>
+上のコードは、DOM 内テンプレートでは :[someattr] に変換されます。もしコンポーネントに someattr ではなく someAttr というプロパティしかなければ、このコードは動作しません。単一ファイルコンポーネント内のテンプレートは、この制約の対象外です。
+
+
+
+
+
 # わからない箇所
 
 - [ここ](https://ja.vuejs.org/guide/essentials/application.html#mounting-the-app:~:text=DOM%20%E5%86%85%E3%81%AE%E3%83%AB%E3%83%BC%E3%83%88%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)
